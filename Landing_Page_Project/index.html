@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash of Clans | Simple Landing Project</title>
+        <!--***   cdjns font awesome link   ***-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!--***  css link   ***-->
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <img src="image/supercell_logo.jpg" alt="Logo"></a>
+            
+            <div class="btn-menu"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="#">Home</a>
+                    <a href="#">Games</a>
+                    <a href="#">Support</a>
+                    <a href="#">Gallery</a>
+                    <a href="#">About</a>
+                </div>
+            </div>
+    </header>
+    <section class="home">
+        <video class="vid-slide active" src="/video/vid_coc.mp4" autoplay muted loop></video>
+        <video class="vid-slide" src="/video/boom_vid.mp4" autoplay muted loop></video>
+        <video class="vid-slide" src="/video/brawl_vid.mp4" autoplay muted loop></video>
+        <video class="vid-slide" src="/video/royale_vid.mp4" autoplay muted loop></video>
+
+        <div class="content active">
+            <h1>Clash of<br><span>Clans</span></h1>
+            <p>Answer the call of the mustache! Join the international fray that is Clash of Clans. Customize your village, build an army and crush your opponents. Like using friendship to strike fear into your enemies? Join a Clan, or establish a Clashing legacy by creating your own. The choice is yours in this millions-strong community of Barbarians. Download for free and Clash on, Chief!</p>
+            <a href="#"><img src="/image/google-play-badge.png" alt="goodle play download "></a>
+        </div>
+
+        <div class="content">
+            <h1>Boom<br><span>Beach</span></h1>
+            <p>Come with a plan or leave in defeat! Welcome to Boom Beach, an epic combat strategy game where your brains and your troop’s brawn fight against the evil Blackguard. Attack bases to free enslaved islanders or create a task force with friends and other players to take on the enemy together, all while exploring and unlocking secrets of this beautiful archipelago. Scout, plan, then BOOM THE BEACH!</p>
+            <a href="#"><img src="/image/google-play-badge.png" alt="goodle play download "></a>
+        </div>
+
+        <div class="content">
+            <h1>Star<br><span>Brawl</span></h1>
+            <p>Time to BRAWL! Team up with your friends and get ready for epic multiplayer MAYHEM! Brawl Stars is the newest game from the makers of Clash of Clans and Clash Royale. Jump into your favorite game mode and play quick matches with your friends. Shoot 'em up, blow 'em up, punch 'em out and win the BRAWL.</p>
+            <a href="#"><img src="/image/google-play-badge.png" alt="goodle play download "></a>
+        </div>
+
+        <div class="content">
+            <h1>Clash<br><span>Royale</span></h1>
+            <p>Clash Royale is a real-time multiplayer game starring the Royales, your favourite Clash characters and much, much more. Collect and upgrade dozens of cards featuring the Clash of Clans troops, spells and defenses you know and love, as well as the Royales: Princes, Knights, Baby Dragons and more. Knock the enemy King and Princesses from their towers to defeat your opponents and win Trophies, Crowns and glory in the Arena.</p>
+            <a href="#"><img src="/image/google-play-badge.png" alt="goodle play download "></a>
+        </div>
+
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-reddit"></i></a>
+        </div>
+        <div class="slider-nav">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script type="text/Javascript">
+        //Javascript responsive navigation menu
+        const btnMenu = document.querySelector(".btn-menu");
+        const navigation = document.querySelector(".navigation");
+
+        btnMenu.addEventListener("click",() => {
+            btnMenu.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        //JavaScript for video slide navigation
+        const btns = document.querySelectorAll(".nav-btn")
+        const slides = document.querySelectorAll(".vid-slide")
+        const contents = document.querySelectorAll(".content")
+
+        var sliderNav = function(manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+        });  
+        });
+    </script>
+  </body>
+</html>
